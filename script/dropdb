@@ -1,0 +1,10 @@
+#!/bin/bash
+# release version
+version=3.1.6
+
+dbHost=${2}
+dbHost=${dbHost:=127.0.0.1}
+dbPassword=${3}
+dbPassword=${dbPassword:=1234}
+
+mysql -uroot -p${dbPassword} -h ${dbHost} < sql/dropdb.sql
